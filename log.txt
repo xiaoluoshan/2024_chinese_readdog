@@ -1,0 +1,72 @@
+
+情况一：github上新建仓库，本地上传初始代码
+ 
+1.在github上创建仓库
+
+2. 打开 Git Bash
+首先进入你的master文件夹下，右键打开“Git Bash Here” ，弹出命令窗口 ，输入如下语句进行上传
+首先找到你想创建的目录文件通过git init创建本地git仓库
+
+比如我在本地路径：E:/1github/0_git_chinese_dog
+
+右键Git Bash Here
+
+3. git init  初始化操作
+//  在此文件夹生成一个.git隐藏文件
+$ git init    
+
+init我们已经做了
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/xiaoluoshan/2024_chinese_readdog.git
+git push -u origin main
+
+
+4. 第一次上传文件
+
+路径下新建一个log.txt
+
+// 将文件添加到缓存区( 注意这个"."，是有空格的，
+"."代表这个test这个文件夹下的目录全部都提交，
+也可以通过git add 文件名 提交指定的文件)
+$ git add . 
+
+
+//  查看现在的状态，可以看到picture文件夹里面的内容都提交上去了；
+$ git status  
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   log.txt
+
+
+//  提交添加到缓存区的文件
+$ git commit -m "git_chinese_dog"  
+
+
+//  添加新的git方式的origin, github上创建好的仓库和本地仓库进行关联
+$ git remote add origin git@github.com:xiaoluoshan/2024_chinese_readdog.git
+
+//git branch -M main
+//git remote add origin  https://github.com/xiaoluoshan/2024_chinese_readdog.git
+
+
+// 把本地库的所有内容推送到远程仓库（github）上
+$ git push origin master
+
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (16/16), 4.14 MiB | 1.39 MiB/s, done.
+Total 16 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/xiaoluoshan/2024_chinese_readdog/pull/new/master
+remote:
+To github.com:xiaoluoshan/2024_chinese_readdog.git
+ * [new branch]      master -> master
+
+
+
